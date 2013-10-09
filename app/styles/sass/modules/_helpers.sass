@@ -1,0 +1,41 @@
+// Miscellaneous useful HTML classes
+
+.hide
+    display: none
+
+.hidden
+    display: none
+    visibility: hidden
+
+.text-bold
+    font-weight: bold
+
+.text-lowercase
+    text-transform: lowercase
+
+.text-uppercase
+    text-transform: uppercase
+
+.has-scroll
+
+    &.x-scroll
+        overflow-x: scroll
+        overflow-y: hidden
+
+    &.y-scroll
+        overflow-x: hidden
+        overflow-y: scroll
+
+    -webkit-overflow-scrolling: touch
+
+    &::-webkit-scrollbar
+        // background-color: rgba(#000, 1)
+        width: 6px
+
+    &::-webkit-scrollbar-thumb
+        background-color: rgba(#000, 0.3)
+        background-clip: padding-box
+        border: solid rgba(#000, 0)
+        border-width: 2px
+        padding: 100px 0 0
+        +box-shadow(inset 1px 1px 0 rgba(#000, 0.1), inset 0 -1px 0 rgba(#000, 0.07))

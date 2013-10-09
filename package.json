@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "testt",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -28,7 +28,8 @@
     "connect-livereload": "~0.1.4",
     "time-grunt": "~0.1.1",
     "grunt-webp": "~0.0.1",
-    "grunt-autoshot": "~0.0.2"
+    "grunt-autoshot": "~0.0.2",
+    "grunt-responsive-images": "~0.0.3"
   },
   "engines": {
     "node": ">=0.8.0"

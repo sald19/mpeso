@@ -1,10 +1,11 @@
 {
-  "name": "test",
+  "name": "testt",
   "version": "0.0.0",
   "dependencies": {
-    "requirejs": "~2.1.4",
+    "jquery": "~1.9.1",
     "modernizr": "~2.6.2",
-    "jquery": "~1.9.1"
+    "normalize.scss": "~2.1.2",
+    "requirejs": "~2.1.4"
   },
   "devDependencies": {}
 }

@@ -37,7 +37,7 @@ module.exports = function (grunt) {
                 tasks: ['coffee:test']
             },
             compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+                files: ['<%= yeoman.app %>/styles/sass/**/*.{scss,sass}'],
                 tasks: ['compass:server']
             },
             livereload: {
@@ -64,6 +64,29 @@ module.exports = function (grunt) {
                 viewport: ['320x480','480x320','384x640','640x384','602x963','963x602','600x960','960x600','800x1280','1280x800','768x1024','1024x768']
               },
             },
+        },
+        responsive_images: {
+            dev: {
+                options: {
+                    sizes: [
+                        {
+                            width: 320,
+                        },
+                        {
+                            width: 640
+                        },
+                        {
+                            width: 1024
+                        }
+                    ]
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/images',
+                    src: '{,*/}*.{png,jpg,jpeg}',
+                    dest: '<%= yeoman.dist %>/images'
+                }]
+            }
         },
         connect: {
             options: {
@@ -106,6 +129,7 @@ module.exports = function (grunt) {
             server: {
                 path: 'http://localhost:<%= connect.options.port %>'
             }
+
         },
         clean: {
             dist: {
@@ -161,7 +185,7 @@ module.exports = function (grunt) {
         },
         compass: {
             options: {
-                sassDir: '<%= yeoman.app %>/styles',
+                sassDir: '<%= yeoman.app %>/styles/sass',
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/images/generated',
                 imagesDir: '<%= yeoman.app %>/images',
@@ -290,7 +314,7 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         '*.{ico,png,txt}',
-                        '.htaccess',
+                        'manifest.webapp',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/*'
                     ]
@@ -358,6 +382,7 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'requirejs',
         'cssmin',
+        'responsive_images:dev',
         'concat',
         'uglify',
         'copy',
