@@ -1,5 +1,6 @@
 module.exports = {
 
-	Tarjetas: require('./tarjetas')
+	Card: require('./cards'),
+	Record: require('./record')
 
 }
